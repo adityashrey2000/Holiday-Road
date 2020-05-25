@@ -1,15 +1,25 @@
 extends base
-
 block content
   main.main
-    .login-form
-      h2.heading-secondary.ma-bt-lg Sign up
-      form.form.form--signup
+    .signup-form
+      h2.heading-secondary.ma-bt-lg Register into your account
+      form.form.form__signup
+        .form__group
+          label.form__label(for='name') Name your
+          input#name.form__input(type='name', placeholder=' ', required='required')
         .form__group
           label.form__label(for='email') Email address
-          input#email.form__input(type='email', placeholder='you@example.com', required)
+          input#email.form__input(type='email', placeholder='you@example.com', required='required')
         .form__group.ma-bt-md
           label.form__label(for='password') Password
-          input#password.form__input(type='password', placeholder='••••••••', required, minlength='8')
+          input#password.form__input(type='password', placeholder='••••••••', required='required', minlength='8')
+        .form__group.ma-bt-md
+          label.form__label(for='passwordComfirm') Password confirm
+          input#passwordComfirm.form__input(type='password', placeholder='••••••••', required='required', minlength='8')
         .form__group
-          button.btn.btn--green Sign in
+          button.btn.btn--green Sign up
+          br
+        .forgot__password 
+          h2 Already have an account?
+          ul
+            a.nav__forgot(href='/login') Login
